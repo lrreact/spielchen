@@ -55,7 +55,7 @@ if %errorlevel%==0 (
 REM Configure with CMake
 echo Configuring with CMake...
 echo Generator: %VS_GENERATOR%
-cmake %VS_GENERATOR% -DCMAKE_BUILD_TYPE=%BUILD_TYPE% ..
+cmake %VS_GENERATOR% -DCMAKE_BUILD_TYPE=%BUILD_TYPE% -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ..
 if errorlevel 1 (
     echo.
     echo CMake configuration failed!
