@@ -5,6 +5,8 @@
 #include "Weapon.h"
 #include <string>
 #include <array>
+#include <memory>
+#include <cstdint>
 
 namespace arena {
 
@@ -17,6 +19,7 @@ constexpr float PLAYER_JUMP_FORCE = 8.0f;
 constexpr float GRAVITY = 20.0f;
 constexpr int PLAYER_MAX_HEALTH = 100;
 constexpr float EYE_HEIGHT = 1.6f;
+constexpr float RESPAWN_TIME = 3.0f;
 
 struct PlayerInput {
     Vector3 moveDirection;  // Normalized movement direction

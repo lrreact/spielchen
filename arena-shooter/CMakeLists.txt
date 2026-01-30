@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
 project(arena-shooter VERSION 1.0.0 LANGUAGES CXX C)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
@@ -69,6 +69,7 @@ add_executable(${PROJECT_NAME} ${GAME_SOURCES} ${GAME_HEADERS})
 
 target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${enet_SOURCE_DIR}/include
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
@@ -107,6 +108,7 @@ add_executable(${PROJECT_NAME}-server
 
 target_include_directories(${PROJECT_NAME}-server PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${enet_SOURCE_DIR}/include
 )
 
 target_compile_definitions(${PROJECT_NAME}-server PRIVATE DEDICATED_SERVER)
