@@ -290,7 +290,4 @@ void Player::checkGrounded()
     }
 }
 
-// Respawn time constant
-constexpr float RESPAWN_TIME = 3.0f;
-
 } // namespace arena

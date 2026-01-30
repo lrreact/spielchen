@@ -9,11 +9,10 @@
 
 namespace arena {
 
-// Game constants
-constexpr int MAX_PLAYERS = 16;
-constexpr float TICK_RATE = 64.0f;
-constexpr float TICK_INTERVAL = 1.0f / TICK_RATE;
-constexpr float RESPAWN_TIME = 3.0f;
+// Game constants (RESPAWN_TIME is in Player.h)
+constexpr int GAME_MAX_PLAYERS = 16;
+constexpr float GAME_TICK_RATE = 64.0f;
+constexpr float GAME_TICK_INTERVAL = 1.0f / GAME_TICK_RATE;
 
 enum class GameState {
     MENU,

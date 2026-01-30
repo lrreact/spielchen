@@ -10,6 +10,7 @@ constexpr uint16_t DEFAULT_PORT = 7777;
 constexpr int MAX_PACKET_SIZE = 1400;  // Safe MTU size
 constexpr uint32_t PROTOCOL_ID = 0x41524E41; // "ARNA"
 constexpr uint8_t PROTOCOL_VERSION = 1;
+constexpr int PROTOCOL_MAX_PLAYERS = 16;
 
 // Packet types
 enum class PacketType : uint8_t {
@@ -90,7 +91,7 @@ struct WorldStatePacket {
     PacketHeader header;
     uint32_t serverTick;
     uint8_t playerCount;
-    NetworkPlayerState players[MAX_PLAYERS];
+    NetworkPlayerState players[PROTOCOL_MAX_PLAYERS];
 };
 
 // Player input

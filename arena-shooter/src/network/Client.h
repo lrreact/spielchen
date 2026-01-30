@@ -1,5 +1,8 @@
 #pragma once
 
+// IMPORTANT: Include raylib BEFORE enet on Windows to avoid API conflicts
+#include "raylib.h"
+
 #include <string>
 #include <queue>
 #include <enet/enet.h>

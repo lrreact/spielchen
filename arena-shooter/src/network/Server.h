@@ -1,5 +1,8 @@
 #pragma once
 
+// IMPORTANT: Include raylib BEFORE enet on Windows to avoid API conflicts
+#include "raylib.h"
+
 #include <vector>
 #include <memory>
 #include <unordered_map>
@@ -9,6 +12,11 @@
 #include "game/Player.h"
 
 namespace arena {
+
+// Server constants
+constexpr int MAX_PLAYERS = 16;
+constexpr float TICK_RATE = 64.0f;
+constexpr float TICK_INTERVAL = 1.0f / TICK_RATE;
 
 struct ClientConnection {
     ENetPeer* peer;
