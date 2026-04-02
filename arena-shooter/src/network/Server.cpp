@@ -1,6 +1,7 @@
 #include "Server.h"
 #include <iostream>
 #include <cstring>
+#include <algorithm>
 
 namespace arena {
 

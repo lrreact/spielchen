@@ -51,33 +51,33 @@ void Game::update(float deltaTime)
     // Fixed timestep for game logic
     m_accumulator += deltaTime;
 
-    while (m_accumulator >= TICK_INTERVAL) {
+    while (m_accumulator >= GAME_TICK_INTERVAL) {
         // Update local player
         if (m_localPlayer) {
-            m_localPlayer->update(TICK_INTERVAL);
+            m_localPlayer->update(GAME_TICK_INTERVAL);
         }
 
         // Update remote players
         for (auto& player : m_players) {
             if (player) {
-                player->update(TICK_INTERVAL);
+                player->update(GAME_TICK_INTERVAL);
             }
         }
 
         // Update projectiles
         for (auto& proj : m_projectiles) {
             if (proj.active) {
-                proj.position.x += proj.velocity.x * TICK_INTERVAL;
-                proj.position.y += proj.velocity.y * TICK_INTERVAL;
-                proj.position.z += proj.velocity.z * TICK_INTERVAL;
-                proj.lifetime -= TICK_INTERVAL;
+                proj.position.x += proj.velocity.x * GAME_TICK_INTERVAL;
+                proj.position.y += proj.velocity.y * GAME_TICK_INTERVAL;
+                proj.position.z += proj.velocity.z * GAME_TICK_INTERVAL;
+                proj.lifetime -= GAME_TICK_INTERVAL;
                 if (proj.lifetime <= 0.0f) {
                     proj.active = false;
                 }
             }
         }
 
-        m_accumulator -= TICK_INTERVAL;
+        m_accumulator -= GAME_TICK_INTERVAL;
         m_tickCount++;
     }
 }

@@ -149,7 +149,6 @@ void Map::generateDefaultArena()
 void Map::render() const
 {
     // Draw ground
-    float halfSize = MAP_SIZE / 2.0f;
     DrawPlane({ 0.0f, 0.0f, 0.0f }, { MAP_SIZE, MAP_SIZE }, DARKGRAY);
 
     // Draw grid on ground
@@ -306,7 +305,7 @@ Vector3 Map::resolveCollision(const Vector3& position, const Vector3& velocity,
 
 Map::RaycastHit Map::raycast(const Ray& ray, float maxDistance) const
 {
-    RaycastHit result = { false, { 0 }, { 0 }, maxDistance };
+    RaycastHit result = { false, { 0.0f, 0.0f, 0.0f }, { 0.0f, 0.0f, 0.0f }, maxDistance };
 
     for (const auto& collider : m_colliders) {
         if (!collider.isSolid) continue;
